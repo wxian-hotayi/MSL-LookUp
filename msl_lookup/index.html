@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSL Lookup Tool</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --primary-light: #eff6ff;
+      --success: #10b981;
+      --success-dark: #059669;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 14px;
+      --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 14px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #0284c7 100%);
+      color: white;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    }
+    .header-icon {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,.18);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em; }
+    header p  { font-size: .78rem; opacity: .75; margin-top: 2px; }
+
+    /* ── Layout ── */
+    main {
+      max-width: 1000px;
+      margin: 28px auto;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 22px 24px;
+    }
+    .card-label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    /* ── Drop zone ── */
+    .drop-zone {
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+      padding: 36px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+      background: #fafbfc;
+      user-select: none;
+    }
+    .drop-zone:hover { border-color: var(--primary); background: var(--primary-light); }
+    .drop-zone.drag-over { border-color: var(--primary); background: var(--primary-light); }
+    .drop-zone .dz-icon { font-size: 2.2rem; margin-bottom: 10px; }
+    .drop-zone p { color: var(--muted); line-height: 1.6; }
+    .drop-zone .browse-link {
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .file-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #15803d;
+      padding: 4px 14px;
+      border-radius: 99px;
+      font-size: .82rem;
+      font-weight: 500;
+    }
+
+    /* ── MPN row ── */
+    .mpn-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .mpn-row label {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    select {
+      flex: 1;
+      min-width: 180px;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: .88rem;
+      color: var(--text);
+      background: white;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-size: .875rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background .15s, transform .1s, box-shadow .15s;
+      white-space: nowrap;
+    }
+    .btn:active { transform: translateY(1px); }
+
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-dark); box-shadow: 0 2px 8px rgba(37,99,235,.3); }
+    .btn-primary:disabled { background: #93c5fd; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .btn-success { background: var(--success); color: white; }
+    .btn-success:hover { background: var(--success-dark); box-shadow: 0 2px 8px rgba(16,185,129,.3); }
+
+    /* ── Progress ── */
+    .status-line {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .progress-track {
+      background: #f1f5f9;
+      border-radius: 99px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--primary), #38bdf8);
+      transition: width .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .progress-fill.running::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 8px,
+        rgba(255,255,255,.15) 8px,
+        rgba(255,255,255,.15) 16px
+      );
+      animation: slide 0.6s linear infinite;
+    }
+    @keyframes slide { to { background-position: 24px 0; } }
+    .progress-fill.done {
+      background: linear-gradient(90deg, var(--success), #34d399);
+    }
+    .progress-fill.done::after { display: none; }
+
+    .progress-meta {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 12px;
+      border-radius: 99px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .pill-blue   { background: #dbeafe; color: #1d4ed8; }
+    .pill-orange { background: #ffedd5; color: #c2410c; }
+    .pill-green  { background: #d1fae5; color: #065f46; }
+    .pill-slate  { background: #f1f5f9; color: #475569; }
+
+    /* ── Results ── */
+    .results-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .results-info { display: flex; flex-direction: column; gap: 2px; }
+    .results-count { font-size: .8rem; color: var(--muted); }
+
+    .search-box {
+      width: 100%;
+      padding: 8px 14px 8px 36px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: .875rem;
+      outline: none;
+      background: #f8fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") 12px center no-repeat;
+      margin-bottom: 10px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .search-box:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,.1); background-color: white; }
+
+    .table-wrap {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      overflow-x: auto;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    thead { background: #f8fafc; }
+    th {
+      padding: 9px 16px;
+      text-align: left;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+    }
+    th:hover { color: var(--primary); }
+    th .sort-arrow { opacity: .35; margin-left: 4px; }
+    th.sorted .sort-arrow { opacity: 1; }
+
+    td {
+      padding: 9px 16px;
+      border-bottom: 1px solid #f8fafc;
+      vertical-align: middle;
+    }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: #f8fafc; }
+
+    .td-num { color: #cbd5e1; font-size: .75rem; font-variant-numeric: tabular-nums; }
+    .td-mpn { font-family: "Consolas", "Courier New", monospace; font-weight: 600; font-size: .83rem; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 99px;
+      font-size: .74rem;
+      font-weight: 600;
+    }
+    .badge-msl     { background: #dbeafe; color: #1e40af; }
+    .badge-none    { background: #f1f5f9; color: #94a3b8; }
+    .badge-digikey { background: #fef9c3; color: #854d0e; }
+    .badge-mouser  { background: #ede9fe; color: #5b21b6; }
+    .badge-cache   { background: #d1fae5; color: #065f46; }
+    .badge-notfound{ background: #fee2e2; color: #991b1b; }
+
+    .no-results {
+      text-align: center;
+      padding: 32px;
+      color: var(--muted);
+      font-size: .875rem;
+    }
+
+    /* ── Quick search ── */
+    .qs-row {
+      display: flex;
+      gap: 10px;
+    }
+    .qs-input {
+      flex: 1;
+      padding: 9px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: .9rem;
+      font-family: "Consolas", "Courier New", monospace;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .qs-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+    .qs-result {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fafbfc;
+      flex-wrap: wrap;
+    }
+    .qs-result.found  { border-color: #bbf7d0; background: #f0fdf4; }
+    .qs-result.notfound { border-color: #fecaca; background: #fff5f5; }
+    .qs-result.error  { border-color: #fde68a; background: #fffbeb; }
+    .qs-mpn   { font-family: "Consolas", "Courier New", monospace; font-weight: 700; font-size: .9rem; }
+    .qs-meta  { font-size: .82rem; color: var(--muted); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-icon">💧</div>
+  <div>
+    <h1>MSL Lookup Tool</h1>
+    <p>Moisture Sensitivity Level (MSL) — DigiKey</p>
+  </div>
+</header>
+
+<main>
+
+  <!-- Quick Search Card -->
+  <div class="card">
+    <div class="card-label">Quick Search</div>
+    <div class="qs-row">
+      <input class="qs-input" id="qsInput" type="text" placeholder="Enter MPN e.g. PE0805FRF470R01L"
+             onkeydown="if(event.key==='Enter') quickSearch()">
+      <button class="btn btn-primary" id="qsBtn" onclick="quickSearch()">Search</button>
+    </div>
+    <div id="qsResult" hidden></div>
+  </div>
+
+  <!-- Upload Card -->
+  <div class="card">
+    <div class="card-label">Input File</div>
+
+    <div class="drop-zone" id="dropZone">
+      <div class="dz-icon">📂</div>
+      <p>Drag &amp; drop your Excel file here, or
+        <span class="browse-link" id="browseLink">browse</span>
+      </p>
+      <p style="font-size:.75rem;margin-top:4px;color:#94a3b8">.xlsx &nbsp;·&nbsp; .xls &nbsp;·&nbsp; .csv</p>
+      <div id="fileBadge" hidden></div>
+    </div>
+    <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" style="display:none">
+
+    <div class="mpn-row" id="mpnRow" hidden>
+      <label>MPN Column:</label>
+      <select id="mpnCol"></select>
+      <button class="btn btn-primary" id="startBtn" onclick="startLookup()">&#9654; Start Lookup</button>
+    </div>
+  </div>
+
+  <!-- Progress Card -->
+  <div class="card" id="progressCard" hidden>
+    <div class="card-label">Progress</div>
+    <div class="status-line" id="statusLine">Initialising…</div>
+    <div class="progress-track">
+      <div class="progress-fill running" id="progressFill"></div>
+    </div>
+    <div class="progress-meta" id="progressMeta">0 / 0</div>
+    <div class="pills" id="pills"></div>
+  </div>
+
+  <!-- Results Card -->
+  <div class="card" id="resultsCard" hidden>
+    <div class="results-topbar">
+      <div class="results-info">
+        <div class="card-label" style="margin-bottom:2px">Results</div>
+        <div class="results-count" id="resultsCount"></div>
+      </div>
+      <button class="btn btn-success" id="exportBtn" onclick="exportResults()">&#11015; Export Excel</button>
+    </div>
+    <input class="search-box" id="searchBox" type="text" placeholder="Filter by MPN…" oninput="filterTable()">
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:44px">#</th>
+            <th onclick="sortBy('mpn')">MPN <span class="sort-arrow" id="arrow-mpn">↕</span></th>
+            <th onclick="sortBy('msl')" style="width:110px">MSL <span class="sort-arrow" id="arrow-msl">↕</span></th>
+            <th onclick="sortBy('source')" style="width:130px">Source <span class="sort-arrow" id="arrow-source">↕</span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  let jobId = null;
+  let startTime = null;
+  let allRows = [];
+  let sortCol = null;
+  let sortDir = 1;
+
+  /* ── File handling ── */
+  const dropZone  = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+
+  document.getElementById('browseLink').addEventListener('click', e => {
+    e.stopPropagation();
+    fileInput.click();
+  });
+  dropZone.addEventListener('click', () => fileInput.click());
+  dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', ()  => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', () => { if (fileInput.files[0]) handleFile(fileInput.files[0]); });
+
+  function handleFile(file) {
+    const badge = document.getElementById('fileBadge');
+    badge.innerHTML = `<span class="file-badge">✅ ${file.name}</span>`;
+    badge.hidden = false;
+
+    const fd = new FormData();
+    fd.append('file', file);
+    fetch('/api/upload', { method: 'POST', body: fd })
+      .then(r => r.json())
+      .then(d => {
+        if (d.error) { alert(d.error); return; }
+        jobId = d.job_id;
+        const sel = document.getElementById('mpnCol');
+        sel.innerHTML = '';
+        d.columns.forEach(col => {
+          const o = document.createElement('option');
+          o.value = o.textContent = col;
+          if (col === d.mpn_col) o.selected = true;
+          sel.appendChild(o);
+        });
+        document.getElementById('mpnRow').hidden = false;
+        document.getElementById('resultsCard').hidden = true;
+        document.getElementById('progressCard').hidden = true;
+      })
+      .catch(e => alert('Upload failed: ' + e));
+  }
+
+  /* ── Start lookup ── */
+  function startLookup() {
+    if (!jobId) return;
+    const mpnCol = document.getElementById('mpnCol').value;
+    document.getElementById('startBtn').disabled = true;
+    document.getElementById('progressCard').hidden = false;
+    document.getElementById('resultsCard').hidden = true;
+
+    const fill = document.getElementById('progressFill');
+    fill.style.width = '0%';
+    fill.className = 'progress-fill running';
+    document.getElementById('statusLine').textContent = 'Starting lookup…';
+    startTime = Date.now();
+
+    fetch(`/api/lookup/${jobId}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mpn_col: mpnCol })
+    })
+    .then(r => r.json())
+    .then(() => listenProgress());
+  }
+
+  /* ── SSE progress ── */
+  function listenProgress() {
+    const es = new EventSource(`/api/progress/${jobId}`);
+
+    es.onmessage = e => {
+      const d = JSON.parse(e.data);
+      const pct = d.total > 0 ? (d.done / d.total * 100) : 0;
+      const elapsed = ((Date.now() - startTime) / 1000).toFixed(0);
+      const remaining = d.done > 0 ? ((elapsed / d.done) * (d.total - d.done)).toFixed(0) : null;
+
+      document.getElementById('progressFill').style.width = pct.toFixed(1) + '%';
+      document.getElementById('progressMeta').textContent =
+        `${d.done} / ${d.total}  ·  Elapsed: ${elapsed}s  ·  ETA: ${remaining ? remaining + 's' : '—'}`;
+      document.getElementById('pills').innerHTML =
+        `<span class="pill pill-blue">DigiKey: ${d.digikey}</span>
+         <span class="pill pill-green">Cache: ${d.cache}</span>
+         <span class="pill pill-slate">Total: ${d.total}</span>`;
+
+      if (d.status !== 'done') {
+        document.getElementById('statusLine').textContent = `Looking up MSL… (${pct.toFixed(0)}%)`;
+      } else {
+        es.close();
+        const fill = document.getElementById('progressFill');
+        fill.className = 'progress-fill done';
+        fill.style.width = '100%';
+        document.getElementById('startBtn').disabled = false;
+        loadResults(d);
+      }
+    };
+
+    es.onerror = () => es.close();
+  }
+
+  /* ── Load & render results ── */
+  function loadResults(progressData) {
+    fetch(`/api/results/${jobId}`)
+      .then(r => r.json())
+      .then(d => {
+        allRows = d.results;
+        const found = allRows.filter(r => r.msl).length;
+        document.getElementById('statusLine').textContent =
+          `✅ Done — found MSL for ${found} of ${allRows.length} parts`;
+        document.getElementById('resultsCount').textContent =
+          `${found} found · ${allRows.length - found} not found · ${allRows.length} total`;
+        renderTable(allRows);
+        document.getElementById('resultsCard').hidden = false;
+        document.getElementById('resultsCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+  }
+
+  function renderTable(rows) {
+    const tbody = document.getElementById('tbody');
+    if (!rows.length) {
+      tbody.innerHTML = '<tr><td colspan="4" class="no-results">No results found.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = rows.map((r, i) => {
+      const mslBadge = r.msl
+        ? `<span class="badge badge-msl">MSL ${r.msl}</span>`
+        : `<span class="badge badge-none">—</span>`;
+      const srcMap = { DigiKey: 'badge-digikey', Mouser: 'badge-mouser', Cache: 'badge-cache', 'Not Found': 'badge-notfound' };
+      const srcBadge = `<span class="badge ${srcMap[r.source] || 'badge-none'}">${r.source}</span>`;
+      return `<tr>
+        <td class="td-num">${i + 1}</td>
+        <td class="td-mpn">${escHtml(r.mpn)}</td>
+        <td>${mslBadge}</td>
+        <td>${srcBadge}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  /* ── Search / filter ── */
+  function filterTable() {
+    const q = document.getElementById('searchBox').value.toLowerCase();
+    const filtered = q ? allRows.filter(r => r.mpn.toLowerCase().includes(q)) : allRows;
+    renderTable(filtered);
+  }
+
+  /* ── Sort ── */
+  function sortBy(col) {
+    document.querySelectorAll('.sort-arrow').forEach(el => el.textContent = '↕');
+    document.querySelectorAll('th').forEach(el => el.classList.remove('sorted'));
+
+    if (sortCol === col) sortDir *= -1;
+    else { sortCol = col; sortDir = 1; }
+
+    const arrow = document.getElementById('arrow-' + col);
+    if (arrow) { arrow.textContent = sortDir === 1 ? '↑' : '↓'; arrow.closest('th').classList.add('sorted'); }
+
+    allRows.sort((a, b) => {
+      const av = col === 'msl' ? (parseInt(a[col]) || 999) : (a[col] || '');
+      const bv = col === 'msl' ? (parseInt(b[col]) || 999) : (b[col] || '');
+      if (av < bv) return -sortDir;
+      if (av > bv) return  sortDir;
+      return 0;
+    });
+    filterTable();
+  }
+
+  /* ── Export ── */
+  function exportResults() {
+    if (jobId) window.location.href = `/api/export/${jobId}`;
+  }
+
+  /* ── Quick search ── */
+  function quickSearch() {
+    const mpn = document.getElementById('qsInput').value.trim();
+    if (!mpn) return;
+    const btn = document.getElementById('qsBtn');
+    const box = document.getElementById('qsResult');
+    btn.disabled = true;
+    btn.textContent = '…';
+    box.hidden = true;
+
+    fetch('/api/search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mpn })
+    })
+    .then(r => r.text().then(t => {
+      if (!t) throw new Error('Empty response from server');
+      try { return JSON.parse(t); }
+      catch (_) { throw new Error(`Server error: ${t.slice(0, 120)}`); }
+    }))
+    .then(d => {
+      btn.disabled = false;
+      btn.textContent = 'Search';
+      box.hidden = false;
+
+      if (d.error) {
+        box.innerHTML = `<div class="qs-result error">⚠️ <span>${escHtml(d.error)}</span></div>`;
+        return;
+      }
+      if (!d.msl) {
+        box.innerHTML = `<div class="qs-result notfound">
+          <span class="qs-mpn">${escHtml(d.mpn)}</span>
+          <span class="badge badge-notfound">Not Found</span>
+          <span class="qs-meta">No MSL data available on DigiKey</span>
+        </div>`;
+        return;
+      }
+      const srcClass = { DigiKey: 'badge-digikey', Cache: 'badge-cache' }[d.source] || 'badge-none';
+      const mfr  = d.manufacturer ? ` · ${escHtml(d.manufacturer)}` : '';
+      const desc = d.description  ? ` · ${escHtml(d.description)}`  : '';
+      box.innerHTML = `<div class="qs-result found">
+        <span class="qs-mpn">${escHtml(d.mpn)}</span>
+        <span class="badge badge-msl">MSL ${d.msl}</span>
+        <span class="badge ${srcClass}">${d.source}</span>
+        <span class="qs-meta">${mfr}${desc}</span>
+      </div>`;
+    })
+    .catch(e => {
+      btn.disabled = false;
+      btn.textContent = 'Search';
+      box.hidden = false;
+      box.innerHTML = `<div class="qs-result error">⚠️ Request failed: ${escHtml(String(e))}</div>`;
+    });
+  }
+
+  /* ── Helpers ── */
+  function escHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+</script>
+</body>
+</html>
