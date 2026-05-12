@@ -55,7 +55,7 @@ def run_lookup(job_id, df, mpn_col):
             continue
         cached = get_cached_msl(mpn.upper())
         if cached and cached[0]:
-            results[mpn] = {"msl": cached[0], "source": "Cache"}
+            results[mpn] = {"msl": cached[0], "source": "Cache", "manufacturer": cached[2] if len(cached) > 2 else ""}
             with lock:
                 counters["cache"] += 1
                 counters["done"] += 1
@@ -75,7 +75,7 @@ def run_lookup(job_id, df, mpn_col):
         futures = {executor.submit(lookup_one, m): m for m in api_mpns}
         for future in as_completed(futures):
             mpn, msl, source, result = future.result()
-            results[mpn] = {"msl": msl or "", "source": source or "Not Found"}
+            results[mpn] = {"msl": msl or "", "source": source or "Not Found", "manufacturer": result.get("manufacturer", "") if result else ""}
             with lock:
                 if source == "DigiKey":
                     counters["digikey"] += 1
@@ -149,7 +149,7 @@ def progress(job_id):
 def get_results(job_id):
     results = jobs.get(job_id, {}).get("results", {})
     return jsonify({"results": [
-        {"mpn": mpn, "msl": v.get("msl", ""), "source": v.get("source", "")}
+        {"mpn": mpn, "msl": v.get("msl", ""), "source": v.get("source", ""), "manufacturer": v.get("manufacturer", "")}
         for mpn, v in results.items()
     ]})
 

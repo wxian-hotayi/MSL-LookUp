@@ -310,6 +310,24 @@
     .badge-cache   { background: #d1fae5; color: #065f46; }
     .badge-notfound{ background: #fee2e2; color: #991b1b; }
 
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      transition: background .15s, border-color .15s;
+    }
+    .link-btn:hover {
+      background: #e0e7ff;
+      border-color: var(--primary);
+    }
+
     .no-results {
       text-align: center;
       padding: 32px;
@@ -429,6 +447,7 @@
             <th onclick="sortBy('mpn')">MPN <span class="sort-arrow" id="arrow-mpn">↕</span></th>
             <th onclick="sortBy('msl')" style="width:110px">MSL <span class="sort-arrow" id="arrow-msl">↕</span></th>
             <th onclick="sortBy('source')" style="width:130px">Source <span class="sort-arrow" id="arrow-source">↕</span></th>
+            <th style="width:70px">Link</th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -566,7 +585,7 @@
   function renderTable(rows) {
     const tbody = document.getElementById('tbody');
     if (!rows.length) {
-      tbody.innerHTML = '<tr><td colspan="4" class="no-results">No results found.</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="5" class="no-results">No results found.</td></tr>';
       return;
     }
     tbody.innerHTML = rows.map((r, i) => {
@@ -575,11 +594,14 @@
         : `<span class="badge badge-none">—</span>`;
       const srcMap = { DigiKey: 'badge-digikey', Mouser: 'badge-mouser', Cache: 'badge-cache', 'Not Found': 'badge-notfound' };
       const srcBadge = `<span class="badge ${srcMap[r.source] || 'badge-none'}">${r.source}</span>`;
+      const dkLink = `https://www.google.com/search?q=${encodeURIComponent(r.mpn)}+site:digikey.com`;
+      const linkBtn = `<a href="${dkLink}" target="_blank" class="link-btn" title="View on DigiKey">🔗</a>`;
       return `<tr>
         <td class="td-num">${i + 1}</td>
         <td class="td-mpn">${escHtml(r.mpn)}</td>
         <td>${mslBadge}</td>
         <td>${srcBadge}</td>
+        <td>${linkBtn}</td>
       </tr>`;
     }).join('');
   }
@@ -647,21 +669,25 @@
         return;
       }
       if (!d.msl) {
+        const dkLink = `https://www.google.com/search?q=${encodeURIComponent(d.mpn)}+site:digikey.com`;
         box.innerHTML = `<div class="qs-result notfound">
           <span class="qs-mpn">${escHtml(d.mpn)}</span>
           <span class="badge badge-notfound">Not Found</span>
           <span class="qs-meta">No MSL data available on DigiKey</span>
+          <a href="${dkLink}" target="_blank" class="link-btn" title="View on DigiKey">🔗</a>
         </div>`;
         return;
       }
       const srcClass = { DigiKey: 'badge-digikey', Cache: 'badge-cache' }[d.source] || 'badge-none';
       const mfr  = d.manufacturer ? ` · ${escHtml(d.manufacturer)}` : '';
       const desc = d.description  ? ` · ${escHtml(d.description)}`  : '';
+      const dkLink = `https://www.digikey.com/en/search?keyword=${encodeURIComponent(d.mpn)}`;
       box.innerHTML = `<div class="qs-result found">
         <span class="qs-mpn">${escHtml(d.mpn)}</span>
         <span class="badge badge-msl">MSL ${d.msl}</span>
         <span class="badge ${srcClass}">${d.source}</span>
         <span class="qs-meta">${mfr}${desc}</span>
+        <a href="${dkLink}" target="_blank" class="link-btn" title="View on DigiKey">🔗</a>
       </div>`;
     })
     .catch(e => {
