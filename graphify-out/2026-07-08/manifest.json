@@ -1,0 +1,67 @@
+{
+  "C:\\Users\\lee.waixian\\test3\\.claude\\settings.local.json": {
+    "mtime": 1778223634.6595888,
+    "ast_hash": "0a63cb3d2d0d7eaf53b9fff88756f11b",
+    "semantic_hash": "0a63cb3d2d0d7eaf53b9fff88756f11b"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\app.py": {
+    "mtime": 1778557298.1823723,
+    "ast_hash": "f3a9d2ee5bf8b20c56e5757c3c7dde82",
+    "semantic_hash": "f3a9d2ee5bf8b20c56e5757c3c7dde82"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\digikey_api.py": {
+    "mtime": 1778223634.671748,
+    "ast_hash": "44809a2cbe981d65a77515eebd141033",
+    "semantic_hash": "44809a2cbe981d65a77515eebd141033"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\local_db.py": {
+    "mtime": 1778223634.671748,
+    "ast_hash": "9e6a9fc10204fc7401d508d8798eff31",
+    "semantic_hash": "9e6a9fc10204fc7401d508d8798eff31"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\main.py": {
+    "mtime": 1778223634.671748,
+    "ast_hash": "f51b5bc90510655fb53695bb39072263",
+    "semantic_hash": "f51b5bc90510655fb53695bb39072263"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\mouser_api.py": {
+    "mtime": 1778223634.671748,
+    "ast_hash": "5124c8dc8986c947a265a5bcfed91d1d",
+    "semantic_hash": "5124c8dc8986c947a265a5bcfed91d1d"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\msl_finder.py": {
+    "mtime": 1778223634.6880507,
+    "ast_hash": "d6ac2a67e4ef42bd347ecccc20c7cbcb",
+    "semantic_hash": "d6ac2a67e4ef42bd347ecccc20c7cbcb"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\output_writer.py": {
+    "mtime": 1778223634.6880507,
+    "ast_hash": "fad2b66147f573c816c190e34f104fe6",
+    "semantic_hash": "fad2b66147f573c816c190e34f104fe6"
+  },
+  "C:\\Users\\lee.waixian\\test3\\README.md": {
+    "mtime": 1778492847.2111866,
+    "ast_hash": "f017b3a2913c503fbcdc67bda157f682",
+    "semantic_hash": "f017b3a2913c503fbcdc67bda157f682"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\README.md": {
+    "mtime": 1778223634.6595888,
+    "ast_hash": "068d067272505cb1106f21e967937f9a",
+    "semantic_hash": "068d067272505cb1106f21e967937f9a"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\index.html": {
+    "mtime": 1778223634.671748,
+    "ast_hash": "fe99313c2b191c62579464eb56b3f59f",
+    "semantic_hash": "fe99313c2b191c62579464eb56b3f59f"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\requirements.txt": {
+    "mtime": 1778223634.6880507,
+    "ast_hash": "d0f6329f8313a384cc7e76360e7bf829",
+    "semantic_hash": "d0f6329f8313a384cc7e76360e7bf829"
+  },
+  "C:\\Users\\lee.waixian\\test3\\msl_lookup\\templates\\index.html": {
+    "mtime": 1778557834.9151595,
+    "ast_hash": "e6e0a2dd90fab6b2f16978cf959ce73d",
+    "semantic_hash": "e6e0a2dd90fab6b2f16978cf959ce73d"
+  }
+}

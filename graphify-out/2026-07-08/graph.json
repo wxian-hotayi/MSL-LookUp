@@ -1,0 +1,2586 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "msl_lookup_batch_flow",
+        "label": "Batch MSL Lookup Flow",
+        "nodes": [
+          "msl_lookup_index_handlefile",
+          "msl_lookup_index_startlookup",
+          "msl_lookup_index_listenprogress",
+          "msl_lookup_index_loadresults"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "msl_lookup/index.html"
+      },
+      {
+        "id": "frontend_api_contract",
+        "label": "Frontend to Flask API Contract",
+        "nodes": [
+          "concept_api_upload",
+          "concept_api_lookup",
+          "concept_api_progress",
+          "concept_api_results",
+          "concept_api_search"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.75,
+        "source_file": "msl_lookup/index.html"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "settings.local.json",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L1",
+      "id": "claude_settings_local",
+      "community": 9,
+      "norm_label": "settings.local.json"
+    },
+    {
+      "label": "permissions",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "id": "claude_settings_local_permissions",
+      "community": 9,
+      "norm_label": "permissions"
+    },
+    {
+      "label": "allow",
+      "file_type": "code",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "id": "claude_settings_local_permissions_allow",
+      "community": 9,
+      "norm_label": "allow"
+    },
+    {
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L1",
+      "id": "msl_lookup_app",
+      "community": 7,
+      "norm_label": "app.py"
+    },
+    {
+      "label": "find_mpn_column()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L23",
+      "id": "msl_lookup_app_find_mpn_column",
+      "community": 7,
+      "norm_label": "find_mpn_column()"
+    },
+    {
+      "label": "run_lookup()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L34",
+      "id": "msl_lookup_app_run_lookup",
+      "community": 4,
+      "norm_label": "run_lookup()"
+    },
+    {
+      "label": "index()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L90",
+      "id": "msl_lookup_app_index",
+      "community": 7,
+      "norm_label": "index()"
+    },
+    {
+      "label": "upload()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L95",
+      "id": "msl_lookup_app_upload",
+      "community": 7,
+      "norm_label": "upload()"
+    },
+    {
+      "label": "start_lookup()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L116",
+      "id": "msl_lookup_app_start_lookup",
+      "community": 7,
+      "norm_label": "start_lookup()"
+    },
+    {
+      "label": "progress()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L128",
+      "id": "msl_lookup_app_progress",
+      "community": 7,
+      "norm_label": "progress()"
+    },
+    {
+      "label": "get_results()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L149",
+      "id": "msl_lookup_app_get_results",
+      "community": 7,
+      "norm_label": "get_results()"
+    },
+    {
+      "label": "export()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L158",
+      "id": "msl_lookup_app_export",
+      "community": 7,
+      "norm_label": "export()"
+    },
+    {
+      "label": "search_single()",
+      "file_type": "code",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L178",
+      "id": "msl_lookup_app_search_single",
+      "community": 4,
+      "norm_label": "search_single()"
+    },
+    {
+      "label": "MSL Lookup Tool - Flask web server.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L1",
+      "id": "msl_lookup_app_rationale_1",
+      "community": 7,
+      "norm_label": "msl lookup tool - flask web server."
+    },
+    {
+      "label": "digikey_api.py",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L1",
+      "id": "msl_lookup_digikey_api",
+      "community": 5,
+      "norm_label": "digikey_api.py"
+    },
+    {
+      "label": "DigiKeyAPIError",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L28",
+      "id": "msl_lookup_digikey_api_digikeyapierror",
+      "community": 5,
+      "norm_label": "digikeyapierror"
+    },
+    {
+      "label": "Exception",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "exception",
+      "community": 6,
+      "norm_label": "exception"
+    },
+    {
+      "label": "get_access_token()",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L32",
+      "id": "msl_lookup_digikey_api_get_access_token",
+      "community": 5,
+      "norm_label": "get_access_token()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L32",
+      "id": "msl_lookup_digikey_api_py_str",
+      "community": 5,
+      "norm_label": "str"
+    },
+    {
+      "label": "search_part()",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L65",
+      "id": "msl_lookup_digikey_api_search_part",
+      "community": 5,
+      "norm_label": "search_part()"
+    },
+    {
+      "label": "search_part_retry()",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L134",
+      "id": "msl_lookup_digikey_api_search_part_retry",
+      "community": 5,
+      "norm_label": "search_part_retry()"
+    },
+    {
+      "label": "int",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L134",
+      "id": "msl_lookup_digikey_api_py_int",
+      "community": 5,
+      "norm_label": "int"
+    },
+    {
+      "label": "float",
+      "file_type": "code",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L134",
+      "id": "msl_lookup_digikey_api_py_float",
+      "community": 5,
+      "norm_label": "float"
+    },
+    {
+      "label": "DigiKey API v4 integration for MSL lookups.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L1",
+      "id": "msl_lookup_digikey_api_rationale_1",
+      "community": 5,
+      "norm_label": "digikey api v4 integration for msl lookups."
+    },
+    {
+      "label": "Get OAuth2 access token from DigiKey with caching (tokens valid ~3600s).",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L33",
+      "id": "msl_lookup_digikey_api_rationale_33",
+      "community": 5,
+      "norm_label": "get oauth2 access token from digikey with caching (tokens valid ~3600s)."
+    },
+    {
+      "label": "local_db.py",
+      "file_type": "code",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L1",
+      "id": "msl_lookup_local_db",
+      "community": 4,
+      "norm_label": "local_db.py"
+    },
+    {
+      "label": "get_connection()",
+      "file_type": "code",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L8",
+      "id": "msl_lookup_local_db_get_connection",
+      "community": 4,
+      "norm_label": "get_connection()"
+    },
+    {
+      "label": "init_db()",
+      "file_type": "code",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L12",
+      "id": "msl_lookup_local_db_init_db",
+      "community": 4,
+      "norm_label": "init_db()"
+    },
+    {
+      "label": "cache_msl()",
+      "file_type": "code",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L40",
+      "id": "msl_lookup_local_db_cache_msl",
+      "community": 4,
+      "norm_label": "cache_msl()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L40",
+      "id": "msl_lookup_local_db_py_str",
+      "community": 4,
+      "norm_label": "str"
+    },
+    {
+      "label": "get_cached_msl()",
+      "file_type": "code",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L53",
+      "id": "msl_lookup_local_db_get_cached_msl",
+      "community": 4,
+      "norm_label": "get_cached_msl()"
+    },
+    {
+      "label": "log_lookup()",
+      "file_type": "code",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L62",
+      "id": "msl_lookup_local_db_log_lookup",
+      "community": 4,
+      "norm_label": "log_lookup()"
+    },
+    {
+      "label": "Local SQLite database for caching MSL lookups.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L1",
+      "id": "msl_lookup_local_db_rationale_1",
+      "community": 4,
+      "norm_label": "local sqlite database for caching msl lookups."
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L1",
+      "id": "msl_lookup_main",
+      "community": 1,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "MSLGUI",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L15",
+      "id": "msl_lookup_main_mslgui",
+      "community": 1,
+      "norm_label": "mslgui"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L16",
+      "id": "msl_lookup_main_mslgui_init",
+      "community": 1,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "._setup_ui()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L28",
+      "id": "msl_lookup_main_mslgui_setup_ui",
+      "community": 1,
+      "norm_label": "._setup_ui()"
+    },
+    {
+      "label": "._browse_file()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L90",
+      "id": "msl_lookup_main_mslgui_browse_file",
+      "community": 1,
+      "norm_label": "._browse_file()"
+    },
+    {
+      "label": "._generate_output_path()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L100",
+      "id": "msl_lookup_main_mslgui_generate_output_path",
+      "community": 1,
+      "norm_label": "._generate_output_path()"
+    },
+    {
+      "label": "._start_lookup()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L105",
+      "id": "msl_lookup_main_mslgui_start_lookup",
+      "community": 1,
+      "norm_label": "._start_lookup()"
+    },
+    {
+      "label": "._lookup_worker()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L127",
+      "id": "msl_lookup_main_mslgui_lookup_worker",
+      "community": 1,
+      "norm_label": "._lookup_worker()"
+    },
+    {
+      "label": "._lookup_thread()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L138",
+      "id": "msl_lookup_main_mslgui_lookup_thread",
+      "community": 1,
+      "norm_label": "._lookup_thread()"
+    },
+    {
+      "label": "._update_progress()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L199",
+      "id": "msl_lookup_main_mslgui_update_progress",
+      "community": 1,
+      "norm_label": "._update_progress()"
+    },
+    {
+      "label": "._lookup_complete()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L204",
+      "id": "msl_lookup_main_mslgui_lookup_complete",
+      "community": 1,
+      "norm_label": "._lookup_complete()"
+    },
+    {
+      "label": "._export_to_excel()",
+      "file_type": "code",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L216",
+      "id": "msl_lookup_main_mslgui_export_to_excel",
+      "community": 1,
+      "norm_label": "._export_to_excel()"
+    },
+    {
+      "label": "MSL Lookup Tool - Optimized version using DigiKey API.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L1",
+      "id": "msl_lookup_main_rationale_1",
+      "community": 1,
+      "norm_label": "msl lookup tool - optimized version using digikey api."
+    },
+    {
+      "label": "mouser_api.py",
+      "file_type": "code",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L1",
+      "id": "msl_lookup_mouser_api",
+      "community": 6,
+      "norm_label": "mouser_api.py"
+    },
+    {
+      "label": "MouserAPIError",
+      "file_type": "code",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L13",
+      "id": "msl_lookup_mouser_api_mouserapierror",
+      "community": 6,
+      "norm_label": "mouserapierror"
+    },
+    {
+      "label": "search_part()",
+      "file_type": "code",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L17",
+      "id": "msl_lookup_mouser_api_search_part",
+      "community": 6,
+      "norm_label": "search_part()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L17",
+      "id": "msl_lookup_mouser_api_py_str",
+      "community": 6,
+      "norm_label": "str"
+    },
+    {
+      "label": "search_part_retry()",
+      "file_type": "code",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L63",
+      "id": "msl_lookup_mouser_api_search_part_retry",
+      "community": 6,
+      "norm_label": "search_part_retry()"
+    },
+    {
+      "label": "int",
+      "file_type": "code",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L63",
+      "id": "msl_lookup_mouser_api_py_int",
+      "community": 6,
+      "norm_label": "int"
+    },
+    {
+      "label": "float",
+      "file_type": "code",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L63",
+      "id": "msl_lookup_mouser_api_py_float",
+      "community": 6,
+      "norm_label": "float"
+    },
+    {
+      "label": "Mouser API integration for MSL lookups.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L1",
+      "id": "msl_lookup_mouser_api_rationale_1",
+      "community": 6,
+      "norm_label": "mouser api integration for msl lookups."
+    },
+    {
+      "label": "msl_finder.py",
+      "file_type": "code",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L1",
+      "id": "msl_lookup_msl_finder",
+      "community": 3,
+      "norm_label": "msl_finder.py"
+    },
+    {
+      "label": "normalize_mpn()",
+      "file_type": "code",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L9",
+      "id": "msl_lookup_msl_finder_normalize_mpn",
+      "community": 3,
+      "norm_label": "normalize_mpn()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L9",
+      "id": "msl_lookup_msl_finder_py_str",
+      "community": 3,
+      "norm_label": "str"
+    },
+    {
+      "label": "find_msl()",
+      "file_type": "code",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L14",
+      "id": "msl_lookup_msl_finder_find_msl",
+      "community": 3,
+      "norm_label": "find_msl()"
+    },
+    {
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L14",
+      "id": "bool",
+      "community": 3,
+      "norm_label": "bool"
+    },
+    {
+      "label": "find_msl_batch()",
+      "file_type": "code",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L59",
+      "id": "msl_lookup_msl_finder_find_msl_batch",
+      "community": 3,
+      "norm_label": "find_msl_batch()"
+    },
+    {
+      "label": "Core MSL lookup logic combining API and local cache.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L1",
+      "id": "msl_lookup_msl_finder_rationale_1",
+      "community": 3,
+      "norm_label": "core msl lookup logic combining api and local cache."
+    },
+    {
+      "label": "Normalize MPN for consistent matching.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L10",
+      "id": "msl_lookup_msl_finder_rationale_10",
+      "community": 3,
+      "norm_label": "normalize mpn for consistent matching."
+    },
+    {
+      "label": "Find MSL for a given MPN.      1. Check local cache first     2. Query DigiKe",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L15",
+      "id": "msl_lookup_msl_finder_rationale_15",
+      "community": 3,
+      "norm_label": "find msl for a given mpn.      1. check local cache first     2. query digike"
+    },
+    {
+      "label": "Batch lookup MSL for multiple MPNs.      Returns dict mapping MPN -> MSL resul",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L60",
+      "id": "msl_lookup_msl_finder_rationale_60",
+      "community": 3,
+      "norm_label": "batch lookup msl for multiple mpns.      returns dict mapping mpn -> msl resul"
+    },
+    {
+      "label": "output_writer.py",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L1",
+      "id": "msl_lookup_output_writer",
+      "community": 0,
+      "norm_label": "output_writer.py"
+    },
+    {
+      "label": "read_input_file()",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L8",
+      "id": "msl_lookup_output_writer_read_input_file",
+      "community": 0,
+      "norm_label": "read_input_file()"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L8",
+      "id": "msl_lookup_output_writer_py_str",
+      "community": 0,
+      "norm_label": "str"
+    },
+    {
+      "label": "DataFrame",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L8",
+      "id": "dataframe",
+      "community": 0,
+      "norm_label": "dataframe"
+    },
+    {
+      "label": "find_mpn_column()",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L21",
+      "id": "msl_lookup_output_writer_find_mpn_column",
+      "community": 0,
+      "norm_label": "find_mpn_column()"
+    },
+    {
+      "label": "write_output_file()",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L37",
+      "id": "msl_lookup_output_writer_write_output_file",
+      "community": 0,
+      "norm_label": "write_output_file()"
+    },
+    {
+      "label": "get_msl_for_row()",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L63",
+      "id": "msl_lookup_output_writer_get_msl_for_row",
+      "community": 0,
+      "norm_label": "get_msl_for_row()"
+    },
+    {
+      "label": "preview_data()",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L70",
+      "id": "msl_lookup_output_writer_preview_data",
+      "community": 0,
+      "norm_label": "preview_data()"
+    },
+    {
+      "label": "int",
+      "file_type": "code",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L70",
+      "id": "msl_lookup_output_writer_py_int",
+      "community": 0,
+      "norm_label": "int"
+    },
+    {
+      "label": "Excel/CSV output writer.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L1",
+      "id": "msl_lookup_output_writer_rationale_1",
+      "community": 0,
+      "norm_label": "excel/csv output writer."
+    },
+    {
+      "label": "Read Excel or CSV file and return DataFrame.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L9",
+      "id": "msl_lookup_output_writer_rationale_9",
+      "community": 0,
+      "norm_label": "read excel or csv file and return dataframe."
+    },
+    {
+      "label": "Find the MPN column in DataFrame.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L22",
+      "id": "msl_lookup_output_writer_rationale_22",
+      "community": 0,
+      "norm_label": "find the mpn column in dataframe."
+    },
+    {
+      "label": "Write DataFrame with MSL column to Excel or CSV.      If output_path is None,",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L38",
+      "id": "msl_lookup_output_writer_rationale_38",
+      "community": 0,
+      "norm_label": "write dataframe with msl column to excel or csv.      if output_path is none,"
+    },
+    {
+      "label": "Get MSL value for a row based on MPN column.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L64",
+      "id": "msl_lookup_output_writer_rationale_64",
+      "community": 0,
+      "norm_label": "get msl value for a row based on mpn column."
+    },
+    {
+      "label": "Return preview of DataFrame as list of lists.",
+      "file_type": "rationale",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L71",
+      "id": "msl_lookup_output_writer_rationale_71",
+      "community": 0,
+      "norm_label": "return preview of dataframe as list of lists."
+    },
+    {
+      "label": "MSL-LookUp Root README",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "test3_readme",
+      "community": 8,
+      "norm_label": "msl-lookup root readme"
+    },
+    {
+      "label": "MSL Lookup Tool README",
+      "file_type": "document",
+      "source_file": "msl_lookup/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_readme",
+      "community": 8,
+      "norm_label": "msl lookup tool readme"
+    },
+    {
+      "label": "quickSearch (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_quicksearch",
+      "community": 10,
+      "norm_label": "quicksearch (index.html)"
+    },
+    {
+      "label": "handleFile (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_handlefile",
+      "community": 11,
+      "norm_label": "handlefile (index.html)"
+    },
+    {
+      "label": "startLookup (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_startlookup",
+      "community": 2,
+      "norm_label": "startlookup (index.html)"
+    },
+    {
+      "label": "listenProgress (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_listenprogress",
+      "community": 2,
+      "norm_label": "listenprogress (index.html)"
+    },
+    {
+      "label": "loadResults (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_loadresults",
+      "community": 2,
+      "norm_label": "loadresults (index.html)"
+    },
+    {
+      "label": "renderTable (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_rendertable",
+      "community": 2,
+      "norm_label": "rendertable (index.html)"
+    },
+    {
+      "label": "filterTable (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_filtertable",
+      "community": 2,
+      "norm_label": "filtertable (index.html)"
+    },
+    {
+      "label": "exportResults (index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_index_exportresults",
+      "community": 12,
+      "norm_label": "exportresults (index.html)"
+    },
+    {
+      "label": "quickSearch (templates/index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "templates_index_quicksearch",
+      "community": 10,
+      "norm_label": "quicksearch (templates/index.html)"
+    },
+    {
+      "label": "handleFile (templates/index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "templates_index_handlefile",
+      "community": 11,
+      "norm_label": "handlefile (templates/index.html)"
+    },
+    {
+      "label": "startLookup (templates/index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "templates_index_startlookup",
+      "community": 2,
+      "norm_label": "startlookup (templates/index.html)"
+    },
+    {
+      "label": "listenProgress (templates/index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "templates_index_listenprogress",
+      "community": 2,
+      "norm_label": "listenprogress (templates/index.html)"
+    },
+    {
+      "label": "loadResults (templates/index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "templates_index_loadresults",
+      "community": 2,
+      "norm_label": "loadresults (templates/index.html)"
+    },
+    {
+      "label": "renderTable (templates/index.html)",
+      "file_type": "code",
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "templates_index_rendertable",
+      "community": 2,
+      "norm_label": "rendertable (templates/index.html)"
+    },
+    {
+      "label": "Python Dependencies (requirements.txt)",
+      "file_type": "document",
+      "source_file": "msl_lookup/requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "msl_lookup_requirements",
+      "community": 13,
+      "norm_label": "python dependencies (requirements.txt)"
+    },
+    {
+      "label": "/api/upload Endpoint",
+      "file_type": "concept",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_api_upload",
+      "community": 11,
+      "norm_label": "/api/upload endpoint"
+    },
+    {
+      "label": "/api/lookup Endpoint",
+      "file_type": "concept",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_api_lookup",
+      "community": 2,
+      "norm_label": "/api/lookup endpoint"
+    },
+    {
+      "label": "/api/progress SSE Endpoint",
+      "file_type": "concept",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_api_progress",
+      "community": 2,
+      "norm_label": "/api/progress sse endpoint"
+    },
+    {
+      "label": "/api/results Endpoint",
+      "file_type": "concept",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_api_results",
+      "community": 2,
+      "norm_label": "/api/results endpoint"
+    },
+    {
+      "label": "/api/export Endpoint",
+      "file_type": "concept",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_api_export",
+      "community": 12,
+      "norm_label": "/api/export endpoint"
+    },
+    {
+      "label": "/api/search Endpoint",
+      "file_type": "concept",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_api_search",
+      "community": 10,
+      "norm_label": "/api/search endpoint"
+    },
+    {
+      "label": "Moisture Sensitivity Level (MSL)",
+      "file_type": "concept",
+      "source_file": "msl_lookup/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_msl",
+      "community": 8,
+      "norm_label": "moisture sensitivity level (msl)"
+    },
+    {
+      "label": "DigiKey Data Source",
+      "file_type": "concept",
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_digikey",
+      "community": 8,
+      "norm_label": "digikey data source"
+    },
+    {
+      "label": "Maker Part Number (MPN)",
+      "file_type": "concept",
+      "source_file": "msl_lookup/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "concept_mpn",
+      "community": 8,
+      "norm_label": "maker part number (mpn)"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "claude_settings_local",
+      "target": "claude_settings_local_permissions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".claude/settings.local.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "claude_settings_local_permissions",
+      "target": "claude_settings_local_permissions_allow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_export",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_find_mpn_column",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L149",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_get_results",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_progress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_run_lookup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_search_single",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_start_lookup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "msl_lookup_app",
+      "target": "msl_lookup_app_upload",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "msl_lookup_app_rationale_1",
+      "target": "msl_lookup_app",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "source": "msl_lookup_app_start_lookup",
+      "target": "msl_lookup_app_find_mpn_column",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "msl_lookup_app_upload",
+      "target": "msl_lookup_app_find_mpn_column",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "msl_lookup_app_run_lookup",
+      "target": "msl_lookup_local_db_cache_msl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "msl_lookup_app_run_lookup",
+      "target": "msl_lookup_local_db_get_cached_msl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "msl_lookup_app_search_single",
+      "target": "msl_lookup_local_db_cache_msl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/app.py",
+      "source_location": "L183",
+      "weight": 1.0,
+      "source": "msl_lookup_app_search_single",
+      "target": "msl_lookup_local_db_get_cached_msl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api",
+      "target": "msl_lookup_digikey_api_digikeyapierror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api",
+      "target": "msl_lookup_digikey_api_get_access_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api",
+      "target": "msl_lookup_digikey_api_search_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api",
+      "target": "msl_lookup_digikey_api_search_part_retry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_rationale_1",
+      "target": "msl_lookup_digikey_api",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L6",
+      "weight": 0.8,
+      "source": "bool",
+      "target": "msl_lookup_digikey_api_digikeyapierror",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_digikeyapierror",
+      "target": "exception",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_get_access_token",
+      "target": "msl_lookup_digikey_api_digikeyapierror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_search_part",
+      "target": "msl_lookup_digikey_api_digikeyapierror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L12",
+      "weight": 0.8,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_digikey_api_digikeyapierror",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L6",
+      "weight": 0.8,
+      "source": "msl_lookup_msl_finder_py_str",
+      "target": "msl_lookup_digikey_api_digikeyapierror",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_mouserapierror",
+      "target": "exception",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_get_access_token",
+      "target": "msl_lookup_digikey_api_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_rationale_33",
+      "target": "msl_lookup_digikey_api_get_access_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_search_part",
+      "target": "msl_lookup_digikey_api_get_access_token",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_search_part",
+      "target": "msl_lookup_digikey_api_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_search_part_retry",
+      "target": "msl_lookup_digikey_api_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_search_part_retry",
+      "target": "msl_lookup_digikey_api_search_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_search_part_retry",
+      "target": "msl_lookup_digikey_api_py_float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/digikey_api.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "msl_lookup_digikey_api_search_part_retry",
+      "target": "msl_lookup_digikey_api_py_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db",
+      "target": "msl_lookup_local_db_cache_msl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db",
+      "target": "msl_lookup_local_db_get_cached_msl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db",
+      "target": "msl_lookup_local_db_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db",
+      "target": "msl_lookup_local_db_init_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db",
+      "target": "msl_lookup_local_db_log_lookup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_rationale_1",
+      "target": "msl_lookup_local_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_cache_msl",
+      "target": "msl_lookup_local_db_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_get_cached_msl",
+      "target": "msl_lookup_local_db_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_init_db",
+      "target": "msl_lookup_local_db_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L65",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_log_lookup",
+      "target": "msl_lookup_local_db_get_connection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_init",
+      "target": "msl_lookup_local_db_init_db"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_cache_msl",
+      "target": "msl_lookup_local_db_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L190",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_lookup_thread",
+      "target": "msl_lookup_local_db_cache_msl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_find_msl",
+      "target": "msl_lookup_local_db_cache_msl"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_get_cached_msl",
+      "target": "msl_lookup_local_db_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/local_db.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "msl_lookup_local_db_log_lookup",
+      "target": "msl_lookup_local_db_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_lookup_thread",
+      "target": "msl_lookup_local_db_get_cached_msl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_find_msl",
+      "target": "msl_lookup_local_db_get_cached_msl"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_find_msl",
+      "target": "msl_lookup_local_db_log_lookup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "msl_lookup_main",
+      "target": "msl_lookup_main_mslgui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "msl_lookup_main_rationale_1",
+      "target": "msl_lookup_main",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_browse_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_export_to_excel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_generate_output_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_lookup_complete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_lookup_thread",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_lookup_worker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_setup_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_start_lookup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui",
+      "target": "msl_lookup_main_mslgui_update_progress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_init",
+      "target": "msl_lookup_main_mslgui_setup_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_browse_file",
+      "target": "msl_lookup_main_mslgui_generate_output_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_start_lookup",
+      "target": "msl_lookup_main_mslgui_lookup_worker",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L196",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_lookup_thread",
+      "target": "msl_lookup_main_mslgui_lookup_complete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/main.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "source": "msl_lookup_main_mslgui_lookup_thread",
+      "target": "msl_lookup_main_mslgui_update_progress",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api",
+      "target": "msl_lookup_mouser_api_mouserapierror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api",
+      "target": "msl_lookup_mouser_api_search_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api",
+      "target": "msl_lookup_mouser_api_search_part_retry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_rationale_1",
+      "target": "msl_lookup_mouser_api",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_search_part",
+      "target": "msl_lookup_mouser_api_mouserapierror",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_search_part",
+      "target": "msl_lookup_mouser_api_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_search_part_retry",
+      "target": "msl_lookup_mouser_api_search_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_search_part_retry",
+      "target": "msl_lookup_mouser_api_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_search_part_retry",
+      "target": "msl_lookup_mouser_api_py_float",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/mouser_api.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "msl_lookup_mouser_api_search_part_retry",
+      "target": "msl_lookup_mouser_api_py_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder",
+      "target": "msl_lookup_msl_finder_find_msl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder",
+      "target": "msl_lookup_msl_finder_find_msl_batch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder",
+      "target": "msl_lookup_msl_finder_normalize_mpn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_rationale_1",
+      "target": "msl_lookup_msl_finder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_find_msl",
+      "target": "msl_lookup_msl_finder_normalize_mpn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_normalize_mpn",
+      "target": "msl_lookup_msl_finder_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_rationale_10",
+      "target": "msl_lookup_msl_finder_normalize_mpn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_find_msl",
+      "target": "msl_lookup_msl_finder_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_find_msl",
+      "target": "bool",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_find_msl_batch",
+      "target": "msl_lookup_msl_finder_find_msl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_rationale_15",
+      "target": "msl_lookup_msl_finder_find_msl",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/msl_finder.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "msl_lookup_msl_finder_rationale_60",
+      "target": "msl_lookup_msl_finder_find_msl_batch",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer",
+      "target": "msl_lookup_output_writer_find_mpn_column",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer",
+      "target": "msl_lookup_output_writer_get_msl_for_row",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer",
+      "target": "msl_lookup_output_writer_preview_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer",
+      "target": "msl_lookup_output_writer_read_input_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer",
+      "target": "msl_lookup_output_writer_write_output_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_rationale_1",
+      "target": "msl_lookup_output_writer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_rationale_9",
+      "target": "msl_lookup_output_writer_read_input_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_read_input_file",
+      "target": "dataframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_read_input_file",
+      "target": "msl_lookup_output_writer_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_find_mpn_column",
+      "target": "msl_lookup_output_writer_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_get_msl_for_row",
+      "target": "msl_lookup_output_writer_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_write_output_file",
+      "target": "msl_lookup_output_writer_py_str",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_find_mpn_column",
+      "target": "dataframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_preview_data",
+      "target": "dataframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_write_output_file",
+      "target": "dataframe",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_rationale_22",
+      "target": "msl_lookup_output_writer_find_mpn_column",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_rationale_38",
+      "target": "msl_lookup_output_writer_write_output_file",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_write_output_file",
+      "target": "msl_lookup_output_writer_get_msl_for_row",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_rationale_64",
+      "target": "msl_lookup_output_writer_get_msl_for_row",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_preview_data",
+      "target": "msl_lookup_output_writer_py_int",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "msl_lookup/output_writer.py",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "msl_lookup_output_writer_rationale_71",
+      "target": "msl_lookup_output_writer_preview_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "test3_readme",
+      "target": "msl_lookup_readme"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_readme",
+      "target": "concept_mpn"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_readme",
+      "target": "concept_msl"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_quicksearch",
+      "target": "concept_api_search"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_quicksearch",
+      "target": "templates_index_quicksearch"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_handlefile",
+      "target": "concept_api_upload"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_startlookup",
+      "target": "concept_api_lookup"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_startlookup",
+      "target": "msl_lookup_index_listenprogress"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_listenprogress",
+      "target": "concept_api_progress"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_listenprogress",
+      "target": "msl_lookup_index_loadresults"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_loadresults",
+      "target": "concept_api_results"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_loadresults",
+      "target": "msl_lookup_index_rendertable"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_filtertable",
+      "target": "msl_lookup_index_rendertable"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "msl_lookup_index_exportresults",
+      "target": "concept_api_export"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_quicksearch",
+      "target": "concept_api_search"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_handlefile",
+      "target": "concept_api_upload"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_startlookup",
+      "target": "concept_api_lookup"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_startlookup",
+      "target": "templates_index_listenprogress"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_listenprogress",
+      "target": "concept_api_progress"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_listenprogress",
+      "target": "templates_index_loadresults"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_loadresults",
+      "target": "concept_api_results"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "msl_lookup/templates/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "templates_index_loadresults",
+      "target": "templates_index_rendertable"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "msl_lookup/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "concept_digikey",
+      "target": "concept_msl"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "msl_lookup/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "concept_mpn",
+      "target": "concept_msl"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "msl_lookup_batch_flow",
+      "label": "Batch MSL Lookup Flow",
+      "nodes": [
+        "msl_lookup_index_handlefile",
+        "msl_lookup_index_startlookup",
+        "msl_lookup_index_listenprogress",
+        "msl_lookup_index_loadresults"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "msl_lookup/index.html"
+    },
+    {
+      "id": "frontend_api_contract",
+      "label": "Frontend to Flask API Contract",
+      "nodes": [
+        "concept_api_upload",
+        "concept_api_lookup",
+        "concept_api_progress",
+        "concept_api_results",
+        "concept_api_search"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "msl_lookup/index.html"
+    }
+  ],
+  "built_at_commit": "893fd9cc04db0c7f52aa11f139edbb3c99b51819"
+}
